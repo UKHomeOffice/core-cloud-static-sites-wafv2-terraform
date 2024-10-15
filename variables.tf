@@ -15,11 +15,6 @@ variable "scope" {
   default     = "REGIONAL"
 }
 
-variable "resource_arn" {
-  description = "The ARN of the resource to associate with WAF ACL"
-  type        = string
-}
-
 variable "tags" {
   description = "A map of tags to assign to the resource."
   type        = map(string)
