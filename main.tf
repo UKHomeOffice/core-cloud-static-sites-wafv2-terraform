@@ -12,6 +12,7 @@ resource "aws_wafv2_web_acl" "this" {
     metric_name                = "webACL"
     sampled_requests_enabled   = true
   }
+}
 
 resource "aws_wafv2_web_acl_association" "this" {
   resource_arn = var.resource_arn
