@@ -2,6 +2,13 @@
 
 This Terraform module creates an AWS WAFv2 Web ACL and allows you to associate it with an AWS resource such as an Application Load Balancer or CloudFront distribution.
 
+## External Links
+https://github.com/UKHomeOffice/core-cloud-static-site-terragrunt
+https://collaboration.homeoffice.gov.uk/display/CORE/Core+Cloud+Static+Sites
+https://collaboration.homeoffice.gov.uk/display/CORE/Static+Sites+Repositories
+
+## Changelog
+
 ## Requirements
 
 - Terraform >= 1.0
@@ -52,3 +59,44 @@ AWSManagedRulesBotControlRuleSet: Provides protection against common bot-related
 
 
 This module provides a basic setup with AWS-managed rules for general protection. You can modify or extend the rules as needed.
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_wafv2_web_acl.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_web_acl) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_scope"></a> [scope](#input\_scope) | Specifies whether this is for CloudFront or regional | `string` | `"REGIONAL"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to assign to the resource. | `map(string)` | `{}` | no |
+| <a name="input_waf_acl_description"></a> [waf\_acl\_description](#input\_waf\_acl\_description) | A description for the WAF ACL | `string` | `"WAF ACL for managing HTTP/HTTPS access."` | no |
+| <a name="input_waf_acl_name"></a> [waf\_acl\_name](#input\_waf\_acl\_name) | The name of the WAF ACL | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_waf_acl_arn"></a> [waf\_acl\_arn](#output\_waf\_acl\_arn) | The ARN of the WAF ACL |
+| <a name="output_waf_acl_id"></a> [waf\_acl\_id](#output\_waf\_acl\_id) | The ID of the WAF ACL |
+<!-- END_TF_DOCS -->
