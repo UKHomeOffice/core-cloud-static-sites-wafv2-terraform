@@ -1,3 +1,8 @@
+provider "aws" {
+  region = "us-east-1"
+  alias  = "us-east-1"
+}
+
 resource "aws_wafv2_web_acl" "this" {
   name        = var.waf_acl_name
   description = var.waf_acl_description
