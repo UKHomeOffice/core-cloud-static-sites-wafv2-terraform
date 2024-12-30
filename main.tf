@@ -18,6 +18,10 @@ resource "aws_wafv2_web_acl" "this" {
     name     = "AWSManaged-CommonRule"
     priority = 1
 
+    override_action {
+      none {}
+    }
+
     statement {
       managed_rule_group_statement {
         name        = "AWSManagedRulesCommonRuleSet"
