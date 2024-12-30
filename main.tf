@@ -18,10 +18,6 @@ resource "aws_wafv2_web_acl" "this" {
     name     = "AWSManaged-CommonRule"
     priority = 1
 
-    override_action {
-      count {}
-    }
-
     statement {
       managed_rule_group_statement {
         name        = "AWSManagedRulesCommonRuleSet"
@@ -36,6 +32,7 @@ resource "aws_wafv2_web_acl" "this" {
     }
   }
 
+  // default
   visibility_config {
     cloudwatch_metrics_enabled = true
     metric_name                = "webACL"
