@@ -20,9 +20,3 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "tenant_vars" {
-  description = "A map of values specific to tenant"
-  type        = any
-  default     = {}
-}
