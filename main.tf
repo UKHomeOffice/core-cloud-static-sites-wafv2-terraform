@@ -38,8 +38,8 @@ resource "aws_wafv2_web_acl" "this" {
 
   // default
   visibility_config {
-    cloudwatch_metrics_enabled = true
-    metric_name                = "webACL"
-    sampled_requests_enabled   = true
+    cloudwatch_metrics_enabled = false
+    metric_name                = var.waf_acl_name
+    sampled_requests_enabled   = false
   }
 }
